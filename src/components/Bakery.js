@@ -2,6 +2,7 @@ import {data} from '../data/data.js'
 import Main from "./Main"
 import Header from "./Header"
 import {useState} from "react"
+import AddCakeForm from './AddCakeForm.js'
 
 console.log(data)
 
@@ -34,6 +35,7 @@ function Bakery(){
         <>
             <Header handleShowCart={handleShowCart} />
             <Main handleSearchBy={handleSearchBy} showCart={showCart} cakes={filteredCakes} handleLikes={handleLikes} />
+            <AddCakeForm />
         </>
         
     )

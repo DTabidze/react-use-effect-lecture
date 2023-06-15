@@ -96,6 +96,32 @@ p.intro{
   display: none;
 }
 
+.add-cake-form{
+  background-color: orange;
+  width:50%;
+  border-radius: 5px;
+  border:solid 1px black;
+  margin:1rem auto;
+}
+
+.add-cake-form div{
+  margin:1rem;
+}
+
+input{
+  font-size:1rem;
+  padding:.5rem;
+  border-radius: 5px;
+  position:sticky;
+  left:50%;
+  width:50%;
+}
+
+input[type="submit"]{
+  background-color: yellow;
+  width:auto;
+}
+
 /*
 .App-logo {
   height: 40vmin;
