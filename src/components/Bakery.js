@@ -29,13 +29,18 @@ function Bakery(){
         })
         setCakes(updatedCakes)
     }
+
+    function addCake(cake){
+        setCakes([...cakes,cake])
+    }
+
     const filteredCakes=cakes.filter(cake=>searchBy==="" || cake.name.toLowerCase().includes(searchBy.toLowerCase()))
 
     return(
         <>
             <Header handleShowCart={handleShowCart} />
             <Main handleSearchBy={handleSearchBy} showCart={showCart} cakes={filteredCakes} handleLikes={handleLikes} />
-            <AddCakeForm />
+            <AddCakeForm lastInsertId={cakes.length} addCake={addCake} />
         </>
         
     )
