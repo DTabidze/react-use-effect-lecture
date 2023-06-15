@@ -20,12 +20,17 @@ function AddCakeForm({addCake,lastInsertId}){
     }
 
     function handlePrice(e){
-        setPrice(parseFloat(e.target.value))
+        if(e.target.value){
+            setPrice(parseFloat(e.target.value))
+        }
+        else{
+            setPrice(0)
+        }
     }
 
     function handleSubmit(e){
         e.preventDefault()
-        const newCake={id:lastInsertId,name,price,description,image,likes:0}
+        const newCake={id:lastInsertId+1,name,price,description,image,likes:0}
         addCake(newCake)
     }
 
@@ -36,20 +41,20 @@ function AddCakeForm({addCake,lastInsertId}){
             </h2>
             <form onSubmit={handleSubmit} className="add-cake-form">
                 <div>
-                    <label for="name">Name:</label>
+                    <label htmlFor="name">Name:</label>
                     <input type="text" name="name" value={name} onChange={handleName} />
                 </div>
                 <div>
-                    <label for="image">Image:</label>
+                    <label htmlFor="image">Image:</label>
                     <input type="text" name="image" value={image} onChange={handleImage} />
                 </div>
                 <div>
-                    <label for="description">Description:</label>
+                    <label htmlFor="description">Description:</label>
                     <input type="text" name="description" value={description} onChange={handleDescription} />
                 </div>
                 <div>
-                    <label for="price">Price</label>
-                    <input type="number" name="price" value={price} onChange={handlePrice} />
+                    <label htmlFor="price">Price</label>
+                    <input type="text" name="price" value={price} onChange={handlePrice} />
                 </div>
                 <div>
                     <input type="submit" name="submit" />
